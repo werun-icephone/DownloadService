@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DownloadServer</string>
+
+    <string name="demo_auto_update">自动更新</string>
+    <string name="demo_auto_update_in_wifi">在有wifi的情况下自动更新</string>
+    <string name="demo_normal_update">手动更新</string>
+    <string name="demo_force_update">强制更新</string>
+
+    <string name="demo_silent_download">后台下载</string>
+    <string name="demo_active_download">前台下载</string>
+
+    <string name="demo_install_automatic">自动安装</string>
+    <string name="demo_install_nonautomatic">手动安装</string>
+
+    <string name="demo_update_type">更新类型</string>
+    <string name="demo_update_mode">更新下载方式</string>
+    <string name="demo_install_type">安装包安装方式</string>
+
+    <string name="demo_apk_version">apk的版本号</string>
+    <string name="demo_apk_default_version">1</string>
+
+    <string name="demo_start_install">开始更新</string>
+
+</resources>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.billy.downloadserver.MainActivity">
+
+    <TextView
+        android:text="@string/demo_update_type"
+        android:background="@color/view_blue"
+        android:textColor="@color/view_white"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/rg_demo_update_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_demo_auto_update"
+            android:text="@string/demo_auto_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_demo_auto_update_in_wifi"
+            android:text="@string/demo_auto_update_in_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_demo_normal_update"
+            android:text="@string/demo_normal_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_demo_force_update"
+            android:text="@string/demo_force_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </RadioGroup>
+
+
+
+    <TextView
+        android:text="@string/demo_update_mode"
+        android:textColor="@color/view_white"
+        android:background="@color/view_blue"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/rg_demo_update_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_demo_active"
+            android:text="@string/demo_active_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <RadioButton
+            android:id="@+id/rb_demo_silent"
+            android:text="@string/demo_silent_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <TextView
+        android:text="@string/demo_install_type"
+        android:textColor="@color/view_white"
+        android:background="@color/view_blue"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/rg_demo_install_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
+        <RadioButton
+            android:id="@+id/rb_demo_auto"
+            android:text="@string/demo_install_automatic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_demo_nonauto"
+            android:text="@string/demo_install_nonautomatic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:text="@string/demo_apk_version"
+        android:textColor="@color/view_white"
+        android:background="@color/view_blue"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <EditText
+        android:text="@string/demo_apk_default_version"
+        android:gravity="center"
+        android:id="@+id/ed_demo_version_code"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:background="@color/view_blue"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:text="@string/demo_start_install"
+        android:id="@+id/btn_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

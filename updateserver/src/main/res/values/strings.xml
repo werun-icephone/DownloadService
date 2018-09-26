@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">UpdateServer</string>
+
+    <string name="download_title">downloading....</string>
+    <string name="download_content">0%</string>
+    <string name="download_complete">下载完成了</string>
+    <string name="download_remain_time">0s</string>
+    <string name="download_end">下载完成啦,去体会一下新版本吧</string>
+    <string name="download_apk_exist">去体会一下全新版本吧</string>
+    <string name="download_failure">震惊！下载居然失败？！</string>
+
+    <string name="install_download_complete">下载完成了，是否体验新版本？</string>
+    <string name="install_title">发现新版本</string>
+    <string name="install_btn_accept">立即安装</string>
+    <string name="install_btn_cancel">稍后安装</string>
+
+    <string name="dialog_found_new_version">发现有新的版本啦</string>
+    <string name="dialog_update_now">立刻更新</string>
+    <string name="dialog_update_later">以后再说</string>
+    <string name="dialog_update_message">更新内容</string>
+
+    <string name="progressBar_progress">0%</string>
+
+</resources>
