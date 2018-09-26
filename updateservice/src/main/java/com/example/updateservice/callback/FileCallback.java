@@ -51,23 +51,12 @@ public abstract class FileCallback implements Callback {
         byte[] buff = new byte[1024];
         int length;
         FileOutputStream fileOutputStream = null;
+        InitDir();
 
-        //文件要储存的位置
-        File dir = new File(path);
-        if(!dir.exists()){
-            boolean isSuccess = dir.mkdirs();
-            if(!isSuccess)
-                Log.d("FileCallback", "onResponse: mkdirs not success" );
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    onFailure(mCompleteSize,ErrorType.DirectoryNoFound);
-                }
-            });
-        }
-
+        //创建并下载apk
         try {
 
+            assert response.body() != null;
             inputStream = response.body().byteStream();
             long size = response.body().contentLength();
 
@@ -122,7 +111,9 @@ public abstract class FileCallback implements Callback {
         }catch (NullPointerException | IOException e){
             e.printStackTrace();
             if(apk != null) {
-                apk.delete();
+                boolean result = apk.delete();
+                if(!result)
+                    Log.d("FileCallback","delete apk fail");
             }
             mHandler.post(new Runnable() {
                 @Override
@@ -147,6 +138,25 @@ public abstract class FileCallback implements Callback {
         }
 
 
+    }
+
+    /**
+     * 初始化存储文件的文件夹
+     */
+    private void InitDir() {
+        //文件要储存的位置
+        File dir = new File(path);
+        if (!dir.exists()) {
+            boolean isSuccess = dir.mkdirs();
+            if (!isSuccess)
+                Log.d("FileCallback", "onResponse: mkdirs not success");
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    onFailure(mCompleteSize, ErrorType.DirectoryNoFound);
+                }
+            });
+        }
     }
 
     /**
