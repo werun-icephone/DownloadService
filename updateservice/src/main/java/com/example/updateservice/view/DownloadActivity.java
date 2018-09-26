@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.updateservice.R;
 import com.example.updateservice.event.UpdateEvent;
@@ -70,7 +71,18 @@ public class DownloadActivity extends BaseActivity {
             @Override
             public void onReceive(Context context, Intent intent) {
                 int progress = intent.getIntExtra(UpdateEvent.UPDATE_PROGRESS_VALUE,0);
+                boolean failure = intent.getBooleanExtra(UpdateEvent.UPDATE_FAILURE,false);
                 updateProgress(progress);
+
+                //若下载失败则退出下载界面
+                if(failure){
+                    Toast.makeText(DownloadActivity.this,
+                            getString(R.string.dialog_update_failure),Toast.LENGTH_SHORT)
+                            .show();
+
+                    finish();
+                }
+
             }
         };
 

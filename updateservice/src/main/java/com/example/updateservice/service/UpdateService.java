@@ -111,6 +111,7 @@ public class UpdateService extends Service {
             public void onFailure(long completeSize, String message) {
                 Log.d("okHttpDownload", "onFailure: " + message);
                 notifyDownloadFailure();
+                broadcastDownloadFailure();
                 stopSelf();
             }
         });
@@ -308,6 +309,16 @@ public class UpdateService extends Service {
         intent.putExtra(UpdateEvent.UPDATE_PROGRESS_VALUE,progress);
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
+
+    /**
+     * 将下载失败的信息广播出去
+     */
+    private void broadcastDownloadFailure(){
+        Intent intent = new Intent(UpdateEvent.UPDATE_BROADCAST_DOWNLOADING_ACTION);
+        intent.putExtra(UpdateEvent.UPDATE_FAILURE,true);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+    }
+
 
     /**
      * 广播下载完成

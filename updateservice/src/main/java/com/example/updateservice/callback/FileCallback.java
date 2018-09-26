@@ -46,6 +46,7 @@ public abstract class FileCallback implements Callback {
     @Override
     public void onResponse(@NonNull final Call call, @NonNull final Response response) {
 
+        File apk = null;
         InputStream inputStream = null;
         byte[] buff = new byte[1024];
         int length;
@@ -70,7 +71,7 @@ public abstract class FileCallback implements Callback {
             inputStream = response.body().byteStream();
             long size = response.body().contentLength();
 
-            final File apk = new File(path,name);
+            apk = new File(path,name);
             if(apk.exists()){
                boolean result = apk.delete();
                if(!result)
@@ -110,16 +111,27 @@ public abstract class FileCallback implements Callback {
 
             fileOutputStream.flush();
 
+            final File finalApk = apk;
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    onSuccess(apk,call,response);
+                    onSuccess(finalApk,call,response);
                 }
             });
 
         }catch (NullPointerException | IOException e){
             e.printStackTrace();
+            if(apk != null) {
+                apk.delete();
+            }
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    onFailure(mCompleteSize,ErrorType.NetworkError);
+                }
+            });
         }finally {
+
             try {
                 if (inputStream != null) {
                     inputStream.close();

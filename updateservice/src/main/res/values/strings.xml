@@ -18,6 +18,7 @@
     <string name="dialog_update_now">立刻更新</string>
     <string name="dialog_update_later">以后再说</string>
     <string name="dialog_update_message">更新内容</string>
+    <string name="dialog_update_failure">根本下不了,网络很差啊小哥</string>
 
     <string name="progressBar_progress">0%</string>
 
