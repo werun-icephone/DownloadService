@@ -8,12 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-import com.example.updateserver.UpdateHelper;
-import com.example.updateserver.model.UpdateMessage;
-import com.example.updateserver.callback.ForceUpdateListener;
-import com.example.updateserver.model.type.InstallType;
-import com.example.updateserver.model.type.UpdateMode;
-import com.example.updateserver.model.type.UpdateType;
+import com.example.updateservice.UpdateHelper;
+import com.example.updateservice.model.UpdateMessage;
+import com.example.updateservice.callback.ForceUpdateListener;
+import com.example.updateservice.model.type.InstallType;
+import com.example.updateservice.model.type.UpdateMode;
+import com.example.updateservice.model.type.UpdateType;
 
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
